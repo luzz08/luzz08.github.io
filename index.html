@@ -34,6 +34,15 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+        /* Стили для адаптивного изображения */
+        .card-img {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+        }
         h1 { margin-bottom: 0.5rem; }
         h2 { color: #4a90e2; margin-bottom: 1rem; }
         p { margin-bottom: 1rem; }
@@ -64,6 +73,8 @@
     <div class="container">
         <section class="card">
             <h2>О проекте</h2>
+            <!-- Добавленное изображение -->
+            <img src="https://unsplash.com" alt="Рабочее пространство с ноутбуком" class="card-img">
             <p>Этот шаблон подходит для любой темы: портфолио, компании, блога или личной страницы. Вы легко можете изменить тексты и цвета под свои задачи.</p>
             <a href="#" class="btn">Узнать больше</a>
         </section>
