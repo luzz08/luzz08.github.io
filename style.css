@@ -1,2 +1,36 @@
-h1 {color: yellow;}
-body {background:rgb(44, 2, 2);}
+body {
+    background-color: #ccc;
+}
+.left {
+    background-color: rgb(133, 93, 93);
+    font-size: 25px;
+    padding: 20;
+}
+.left ul {
+    list-style-type: none;
+}
+.left a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 5;
+    border-radius: 15px;
+    transition: background-color 0.2s;
+}
+.left a:hover {
+    background-color: rgb(87, 1, 1);
+}
+.content {
+    background-color: rgb(121, 55, 55);
+    text-align: center;
+    padding: 30px;
+}
+.tablica {
+    border-collapse: collapse;
+    border: 2px solid #ccc;
+}
+.btn-own {
+    color: rgb(78, 78, 78);
+    font-size: 15px;
+    padding: 3 55;
+    border-radius: 25px;
+}
