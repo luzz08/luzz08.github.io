@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW M5</title>
+    <title>Авторизация</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,20 +22,65 @@
 
             <td class="content" style="width:80vw">
                 <div class="content-1">
-                    <h1>BMW M5</h1>
+                    <h1>Авторизуйтесь</h1>
 
                     <div class="card">
-                        <button class="btn-own">buy</button>
+                        <button id="LOGINgit">Sign In GitHub</button>
+                        <button id="LOGINgoogle">Sign In Google</button>
                     </div>
                 </div>
             </td>
         </tr>
     </table>
 
-    <button id="LOGINgit">Sign In with GitHub</button>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-analytics.js";
+        import { getAuth, signInWithPopup, GithubAuthProvider, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";    
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDLobcX1w4HeIvIMzme37KpCKUVEPQ6ajE",
+          authDomain: "sitemdk-7beab.firebaseapp.com",
+          projectId: "sitemdk-7beab",
+          storageBucket: "sitemdk-7beab.firebasestorage.app",
+          messagingSenderId: "1087058702653",
+          appId: "1:1087058702653:web:f6bd098955c7f30f1f1554",
+          measurementId: "G-808LYD3455"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+const provider = new GithubAuthProvider();
 
+document.getElementById('LOGINgit').addEventListener('click', () => {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log("Успешный вход:", result.user.displayName);
+    })
+    .catch((error) => {
+      console.error("Ошибка входа:", error.code, error.message);
+    });
+});
+const googleProvider = new GoogleAuthProvider();
+document.getElementById('LOGINgoogle').addEventListener('click', () => {
+    signInWithPopup(auth, googleProvider)
+        .then((result) => {
+            console.log("Google вход:", result.user.displayName, result.user.email);
+        })
+        .catch((error) => {
+            console.error("Google ошибка:", error.code, error.message);
+        });
+});
+        const analytics = getAnalytics(app);
+      </script>
+      
     <script src="script.js"></script>
-    <script type="module" src="./firebase.js"></script>
 
 </body>
 </html>
