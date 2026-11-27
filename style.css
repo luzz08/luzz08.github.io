@@ -1,6 +1,5 @@
 body {
     background-color: #9b9b9b;
-    text-align: center;
 }
 .left {
     background-color: rgb(133, 93, 93);
@@ -45,4 +44,7 @@ body {
     color: #ccc;
     background-color: rgb(121, 55, 55);
     border-radius: 25px;
+}
+#login-area {
+    text-align: center;
 }
